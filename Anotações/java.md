@@ -1,6 +1,6 @@
-#Anotações da linguagem Java
+# Anotações da linguagem Java
 
-###Instalar openJDK
+### Instalar openJDK
  - Acessar https://www.azul.com/downloads procurar versão LTS, nessa data foi java 11 para Windows 64bit
  - Baixar arquivo .zip
  - Criar uma pasta dentro de c:\Arquivos de programas chamada Java
@@ -9,7 +9,7 @@
  - Adicionar o caminho ao path adicionando ao final do caminho um \bin
  - No cmd digitar java –version para ver se Windows reconhece o openjdk
 
-###Testando compilador e lendo arquivo .class
+### Testando compilador e lendo arquivo .class
  - Crie um arquivo OlaMundo.java e acesse a pasta dele com cmd
  - No arquivo digite o seguinte código:
  -- //Minha Primeira Classe Java
@@ -23,6 +23,6 @@
  - No cmd digite java OlaMundo
  - No cmd será escrito a mensagem Hello, Word Java!!!!
 
-###Instalando IDE Eclipse
+### Instalando IDE Eclipse
  - Acesse https://www.eclipse.org/downloads/
  - 
