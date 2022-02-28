@@ -154,7 +154,15 @@
    - Ajuda a organizar as classes
    - Projeto -> SRC -> br -> com -> site
 
+### Debugging
+ - Debugar é analisar o codigo linha a linha com ajuda de uma IDE, similar ao teste de mesa
 
+### Tratamento de Exceções
+ - Error - Não tem como tratar
+ - Unchecked - não é obrigado a tratar
+ - Checked Exception - obrigado a tratar com try, catch, finally
+ 
+### Coleções
 
 
 
