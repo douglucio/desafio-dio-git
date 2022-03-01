@@ -163,6 +163,118 @@
  - Checked Exception - obrigado a tratar com try, catch, finally
  
 ### Coleções
+ - Criar uma lista -> List<Double> minhaLista = new ArrayList<Double>();
+ - Adicionar elementos -> minhaLista.add(5.5);
+ - Adicionar elementos e uma determinada posição-> minhaLista.add(posição, 5.5);
+ - Imprimir -> System.out.println(minhaLista); ou  System.out.println(minhaLista.toString);
+ - Exibir posição dentro de uma lista -> minhaLista.indexOf(5.5);
+ - Substituir elemento -> minhaLista.set(posição, valor);
+ - verifica se tem elemento na lista -> minhaLista.contains(5.5);
+ - imprimir lista com for -> for (Double lista : minhaLista) System.out.println(lista);
+ - Pegando item da lista pelo indice -> minhaLista.get(0); (pega primeiro item)
+ - Pegar menor valor -> Collection.min(minhaLista);
+ - Pegar maior valor -> Collection.max(minhaLista);
+ - somar valores:
+ - - Iterator<Double> interator = notas.iterator();
+ - - Double soma = 0d;
+ - - while(iterator.hasNext()) {
+ - - - Double next = iterator.next();
+ - - - soma += next;
+ - - }
+ - Quantidade de elementos -> minhaLista.size();
+ - Remover elemento -> minhaLista.remove(valor) ou minhaLista.remove(indice)
+ - Remover valores menores que 7:
+ - - Iterator<Double> interator = notas.iterator();
+ - - while(iterator.hasNext()) { (verifica se tem proximo na lista)
+ - - - Double next = iterator.next();
+ - - - if (next < 7 >) iterator.remove();
+ - - }
+ - Apagar toda lista -> minhaLista.clear()
+ - verificar se a lista tem elementos -> minhaLista.isEmpty();
+
+ #### Exemplo de utilização de lista com objeto
+
+ 1) Criar uma classe Gato com seguites atributos nome, idade e cor
+
+ public class Gato {
+    String nome;
+    Integer idade;
+    String cor; 
+ }
+
+ 2) criar metodos gets
+ 3) sobrescrever toString
+ @Override
+ public String toString() {
+    return "{"
+    "nome='" + nome + '\'' + 
+    ", idade=" + idade +
+    ", cor'" + cor + '\'' +
+    '}';
+ }
+
+4) criar a lista dentro do main
+List<Gato> meusGatos = new ArrayList<>() {{
+   add(new Gato(nome: "jon", idade:18, cor:"preto"));
+   add(new Gato(nome: "pedro", idade:7, cor:"branco"));
+   add(new Gato(nome: "Simba", idade:6, cor:"tigrado"));
+   add(new Gato(nome: "jon", idade:12, cor:"amarelo"));
+}}
+
+5) imprimir lista -> System.out.println(meusGatos);
+
+6) Agora é brincar com a lista:
+ - Imprimir lista em ordem aleatoria -> Collections.shuffle(meusGatos);
+ - Comparar itens da lista -> implementar interface Comparable
+ class Gato implements Comparable<Gato>
+ - Sobrescrever o metodo compareTo
+ public int compareTo(Gato gato) {
+    return this.getNome().compareToIgnoreCase(gato.getNome());
+ }
+
+ - Organizando gatos por ordem natural (nome) -> Collections.sort(meusGatos);
+ 
+ - Organizando gatos por idade, precisa criar uma nova classe para isso
+ class ComparadorIdade implements Comparator<Gato> {
+    @Override
+    public int compare(Gato g1, gato g2) {
+       return Integer.compare(g1.getIdade(), g2.getIdade());
+    }
+ }
+ - listando gatos por idade -> Collections.sort(meusgatos, new ComparatorIdade()) ou meusGatos.sort(new ComparadorIdade());
+
+ - Organizando gatos por cor, também precisa criar uma nova classe para isso
+ class ComparadorCor implements Comparator<Gato> {
+    @Override
+    public int compare(Gato g1, gato g2) {
+       return g1.getCor().compareToIgnoreCase(g2.getCor());
+    }
+ }
+ - listando gatos por cor -> Collections.sort(meusgatos, new ComparatorCor()) ou meusGatos.sort(new ComparadorCor());
+
+ - Organizando gatos por nome, depois cor e depois idade, também precisa criar uma nova classe para isso
+ class ComparadorNomeCorIdade implements Comparator<Gato> {
+    @Override
+    public int compare(Gato g1, gato g2) {
+       int nome = g1.getNome().compareToIgnoreCase(g2.getNome());
+       if (nome != 0) return nome;
+
+       int cor = g1.getCor().compareToIgnoreCase(g2.getCor());
+       if (cor != 0) return cor;
+
+       return Integer.compare(g1.getIdade(), g2.getIdade());
+    }
+ }
+ - listando gatos por cor -> Collections.sort(meusgatos, new ComparatorNomeCorIdade()) ou meusGatos.sort(new ComparadorCor());
 
 
-
+### Stream API
+ - Classe anonima
+ - Funcional interface
+ - - Comparator
+ - - Consumer
+ - - Function
+ - - Predicate
+ - Lambda ->
+ - reference method ::
+ - 
